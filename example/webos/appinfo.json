@@ -1,0 +1,10 @@
+{
+  "id": "com.paranid5.device_info_plus",
+  "version": "1.0.0",
+  "vendor": "Paranid5",
+  "type": "web",
+  "main": "index.html",
+  "title": "Device Info Plus",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png"
+}

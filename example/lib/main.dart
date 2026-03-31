@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
+  String _sdkVersion = 'Unknown';
 
   @override
   void initState() {
@@ -24,20 +24,20 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> initPlatformState() async {
-    String platformVersion;
+    String sdkVersion;
 
     try {
       final deviceInfo = await DeviceInfoPlusWebOS.deviceInfo;
-      platformVersion = deviceInfo?.version ?? 'undefined';
+      sdkVersion = deviceInfo?.sdkVersion ?? 'undefined';
     } catch (e) {
-      platformVersion = 'error';
+      sdkVersion = 'error';
     }
 
     if (!mounted) {
       return;
     }
 
-    setState(() => _platformVersion = platformVersion);
+    setState(() => _sdkVersion = sdkVersion);
   }
 
   @override
@@ -45,7 +45,12 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: const Text('Plugin example app')),
-        body: Center(child: Text('Running on: webOS $_platformVersion')),
+        body: Center(
+          child: Text(
+            'Running on: webOS $_sdkVersion',
+            style: TextStyle(fontSize: 64),
+          ),
+        ),
       ),
     );
   }
