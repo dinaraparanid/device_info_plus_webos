@@ -1,4 +1,5 @@
-part of 'device_info_plus_webos.dart';
+import 'package:device_info_plus_webos/src/webos_device_info.dart';
+import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 abstract class DeviceInfoPlusWebOSPlatform extends PlatformInterface {
   DeviceInfoPlusWebOSPlatform() : super(token: _token);

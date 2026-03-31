@@ -1,4 +1,5 @@
-part of 'device_info_plus_webos.dart';
+import 'package:device_info_plus_webos/src/webos_interop.dart';
+import 'package:flutter/foundation.dart';
 
 @immutable
 final class WebOSDeviceInfo {

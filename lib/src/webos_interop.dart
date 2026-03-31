@@ -1,4 +1,4 @@
-part of 'device_info_plus_webos.dart';
+import 'dart:js_interop';
 
 @JS('webOS')
 extension type WebOS._(JSObject _) implements JSObject {
