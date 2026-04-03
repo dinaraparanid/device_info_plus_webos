@@ -1,3 +1,7 @@
+## 0.1.2
+
+* Fix build error on non-web platforms
+
 ## 0.1.1
 
 * Decrease Dart SDK version to 3.9.2
