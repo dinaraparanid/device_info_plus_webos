@@ -1,5 +1,7 @@
 import 'dart:js_interop';
 
+import 'package:device_info_plus_webos/device_info_plus_webos.dart';
+
 @JS('webOS')
 extension type WebOS._(JSObject _) implements JSObject {
   external static void deviceInfo(JSFunction callback);
@@ -26,4 +28,31 @@ extension type JSDeviceInfo._(JSObject _) implements JSObject {
   @JS('mainboardMaker') external String? mainboardMaker;
   @JS('platformBizType') external String platformBizType;
   @JS('tuner') external String tuner;
+}
+
+extension JSDeviceInfoMapper on JSDeviceInfo {
+  WebOSDeviceInfo toWebOSDeviceInfo() {
+    return WebOSDeviceInfo(
+      modelName: modelName,
+      version: version,
+      versionMajor: versionMajor,
+      versionMinor: versionMinor,
+      versionDot: versionDot,
+      sdkVersion: sdkVersion,
+      screenWidth: screenWidth,
+      screenHeight: screenHeight,
+      uhd: uhd,
+      uhd8k: uhd8k,
+      oled: oled,
+      ddrSize: ddrSize,
+      hdr10: hdr10,
+      dolbyVision: dolbyVision,
+      dolbyAtmos: dolbyAtmos,
+      brandName: brandName,
+      manufacturer: manufacturer,
+      mainboardMaker: mainboardMaker,
+      platformBizType: platformBizType,
+      tuner: tuner,
+    );
+  }
 }

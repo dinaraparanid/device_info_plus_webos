@@ -24,7 +24,7 @@ final class DeviceInfoPlusWebOSWeb extends DeviceInfoPlusWebOSPlatform {
     final completer = Completer<WebOSDeviceInfo>();
 
     void callback(JSDeviceInfo info) {
-      completer.complete(WebOSDeviceInfo.fromJS(info));
+      completer.complete(info.toWebOSDeviceInfo());
     }
 
     WebOS.deviceInfo(callback.toJS);
