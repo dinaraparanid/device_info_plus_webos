@@ -1,6 +1,11 @@
+
 ## 0.2.0
 
 * Migrate to inheritance of device_info_plus_platform_interface
+
+## 0.1.2
+
+* Fix build error on non-web platforms
 
 ## 0.1.1
 

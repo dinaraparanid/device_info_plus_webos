@@ -1,10 +1,9 @@
 import 'package:device_info_plus_platform_interface/device_info_plus_platform_interface.dart';
-import 'package:device_info_plus_webos/src/webos_interop.dart';
 import 'package:flutter/foundation.dart';
 
 @immutable
 final class WebOSDeviceInfo implements BaseDeviceInfo {
-  const WebOSDeviceInfo._({
+  const WebOSDeviceInfo({
     required this.modelName,
     required this.version,
     required this.versionMajor,
@@ -26,31 +25,6 @@ final class WebOSDeviceInfo implements BaseDeviceInfo {
     required this.platformBizType,
     required this.tuner,
   });
-
-  factory WebOSDeviceInfo.fromJS(JSDeviceInfo info) {
-    return WebOSDeviceInfo._(
-      modelName: info.modelName,
-      version: info.version,
-      versionMajor: info.versionMajor,
-      versionMinor: info.versionMinor,
-      versionDot: info.versionDot,
-      sdkVersion: info.sdkVersion,
-      screenWidth: info.screenWidth,
-      screenHeight: info.screenHeight,
-      uhd: info.uhd,
-      uhd8k: info.uhd8k,
-      oled: info.oled,
-      ddrSize: info.ddrSize,
-      hdr10: info.hdr10,
-      dolbyVision: info.dolbyVision,
-      dolbyAtmos: info.dolbyAtmos,
-      brandName: info.brandName,
-      manufacturer: info.manufacturer,
-      mainboardMaker: info.mainboardMaker,
-      platformBizType: info.platformBizType,
-      tuner: info.tuner,
-    );
-  }
 
   /// The model name of the device in UTF-8 format.
   final String modelName;
