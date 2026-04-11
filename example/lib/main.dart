@@ -1,7 +1,6 @@
+import 'package:device_info_plus_webos/device_info_plugin_webos.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-
-import 'package:device_info_plus_webos/device_info_plus_webos.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,8 +26,8 @@ class _MyAppState extends State<MyApp> {
     String sdkVersion;
 
     try {
-      final deviceInfo = await DeviceInfoPlusWebOS.deviceInfo;
-      sdkVersion = deviceInfo?.sdkVersion ?? 'undefined';
+      final deviceInfo = await DeviceInfoPluginWebOS().deviceInfo();
+      sdkVersion = deviceInfo.sdkVersion;
     } catch (e) {
       sdkVersion = 'error';
     }

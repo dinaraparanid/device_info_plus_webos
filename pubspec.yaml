@@ -1,6 +1,6 @@
 name: device_info_plus_webos
 description: "Device info plus plugin implementation for webOS"
-version: 0.1.1
+version: 0.2.0
 repository: https://github.com/dinaraparanid/device_info_plus_webos
 
 environment:
@@ -13,6 +13,7 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   plugin_platform_interface: ^2.1.8
+  device_info_plus_platform_interface: ^8.0.0
 
 dev_dependencies:
   flutter_test:
@@ -23,5 +24,5 @@ flutter:
   plugin:
     platforms:
       web:
-        pluginClass: DeviceInfoPlusWebOSWeb
-        fileName: src/device_info_plus_webos.dart
+        pluginClass: DeviceInfoPlusWebOSPlugin
+        fileName: src/device_info_plus_webos_plugin.dart

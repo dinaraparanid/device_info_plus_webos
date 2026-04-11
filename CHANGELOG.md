@@ -1,3 +1,7 @@
+## 0.2.0
+
+* Migrate to inheritance of device_info_plus_platform_interface
+
 ## 0.1.1
 
 * Decrease Dart SDK version to 3.9.2

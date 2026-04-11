@@ -1,26 +1,26 @@
 import 'dart:async';
 import 'dart:js_interop';
 
-import 'package:device_info_plus_webos/src/device_info_plus_webos_platform_interface.dart';
+import 'package:device_info_plus_platform_interface/device_info_plus_platform_interface.dart';
 import 'package:device_info_plus_webos/src/webos_device_info.dart';
 import 'package:device_info_plus_webos/src/webos_interop.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
-final class DeviceInfoPlusWebOSWeb extends DeviceInfoPlusWebOSPlatform {
-  DeviceInfoPlusWebOSWeb._();
+final class DeviceInfoPlusWebOSPlugin extends DeviceInfoPlatform {
+  DeviceInfoPlusWebOSPlugin._();
 
   static void registerWith(Registrar registrar) {
-    DeviceInfoPlusWebOSPlatform.instance = DeviceInfoPlusWebOSWeb._();
+    DeviceInfoPlatform.instance = DeviceInfoPlusWebOSPlugin._();
   }
 
   WebOSDeviceInfo? _cachedDeviceInfo;
 
   @override
-  Future<WebOSDeviceInfo?> get deviceInfo async {
+  Future<BaseDeviceInfo> deviceInfo() async {
     return _cachedDeviceInfo ??= await _deviceInfo;
   }
 
-  Future<WebOSDeviceInfo?> get _deviceInfo {
+  Future<WebOSDeviceInfo> get _deviceInfo {
     final completer = Completer<WebOSDeviceInfo>();
 
     void callback(JSDeviceInfo info) {

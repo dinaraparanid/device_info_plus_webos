@@ -1,8 +1,9 @@
+import 'package:device_info_plus_platform_interface/device_info_plus_platform_interface.dart';
 import 'package:device_info_plus_webos/src/webos_interop.dart';
 import 'package:flutter/foundation.dart';
 
 @immutable
-final class WebOSDeviceInfo {
+final class WebOSDeviceInfo implements BaseDeviceInfo {
   const WebOSDeviceInfo._({
     required this.modelName,
     required this.version,
@@ -145,4 +146,32 @@ final class WebOSDeviceInfo {
         'platformBizType: $platformBizType, '
         'tuner: $tuner)';
   }
+
+  @override
+  Map<String, dynamic> get data => {
+    'modelName': modelName,
+    'version': version,
+    'versionMajor': versionMajor,
+    'versionMinor': versionMinor,
+    'versionDot': versionDot,
+    'sdkVersion': sdkVersion,
+    'screenWidth': screenWidth,
+    'screenHeight': screenHeight,
+    'uhd': uhd,
+    'uhd8k': uhd8k,
+    'oled': oled,
+    'ddrSize': ddrSize,
+    'hdr10': hdr10,
+    'dolbyVision': dolbyVision,
+    'dolbyAtmos': dolbyAtmos,
+    'brandName': brandName,
+    'manufacturer': manufacturer,
+    'mainboardMaker': mainboardMaker,
+    'platformBizType': platformBizType,
+    'tuner': tuner,
+  };
+
+  @Deprecated('use [data] instead')
+  @override
+  Map<String, dynamic> toMap() => data;
 }
