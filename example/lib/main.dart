@@ -1,4 +1,4 @@
-import 'package:device_info_plus_webos/device_info_plugin_webos.dart';
+import 'package:device_info_plus_webos/device_info_plus_webos.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
